@@ -5,5 +5,5 @@ data class Post(
     val content: String,
     val postTime: LocalDateTime,
     val userId: Int,
-    val author: String = "guest"
+    val author: String? = "guest"
 )

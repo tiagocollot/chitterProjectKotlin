@@ -7,12 +7,18 @@ class UserRepository {
         return users.toList()
     }
     // Add a user to the list
+
     fun create(user: User) {
         users.add(user)
     }
     // Find a user by their ID
     fun find(userId: Int): User? {
         return users.find { it.id == userId }
+    }
+
+    fun findUserNameById(userId: Int): String? {
+        val user = find(userId)
+        return user?.username
     }
     // Find a user associated with a specific post ID
     fun findWithPost(postId: Int): User? {

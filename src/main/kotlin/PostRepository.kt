@@ -1,9 +1,5 @@
 
 import java.time.LocalDateTime
-
-// Similar to Python is the constructor Method
-
-
 class PostRepository {
     private val posts: MutableList<Post> = mutableListOf()
 
@@ -22,10 +18,15 @@ class PostRepository {
 
 fun main() {
     val postRepository = PostRepository()
-
+    val userRepository = UserRepository()
     // Creating sample posts
-    val post1 = Post(1, "First post", LocalDateTime.now(), 1, "John")
-    val post2 = Post(2, "Second post", LocalDateTime.now(), 2, "Jane")
+    val user1 = User(1, "John Doe", "johndoe", "johndoe@example.com", "232323")
+    val user2 = User(2, "Doe", "doe", "doe@example.com", "121232")
+    userRepository.create(user1)
+    userRepository.create(user2)
+
+    val post1 = Post(1, "First post", LocalDateTime.now(), 1, userRepository.findUserNameById(1))
+    val post2 = Post(2, "Second post", LocalDateTime.now(), 2, userRepository.findUserNameById(2))
 
     // Adding posts to the repository
     postRepository.create(post1)
