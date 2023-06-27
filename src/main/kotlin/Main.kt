@@ -46,6 +46,7 @@ fun main() {
     // Retrieve all peeps again
     val allPostsAfterLogOut = postRepository.all()
     println("All Peeps after logging out:")
+    // Iterate over all posts after logging out and print the first element of each post
     allPostsAfterLogOut.forEach { println(it.split("|")[0]) }
 }
 
