@@ -6,6 +6,7 @@ class PostRepository {
     private val posts: MutableList<String> = mutableListOf()
     // Retrieves all posts and sorts them in descending order based on the post timestamp
     fun all(): List<String> {
+        // Sort posts in descending order based on the post timestamp
         return posts.sortedByDescending {
             LocalDateTime.parse(it.split("|")[1], DateTimeFormatter.ofPattern("uuuu-M-dd HH:mm:ss"))
         }
