@@ -1,4 +1,4 @@
-// Define the UserRepository class
+/*// Define the UserRepository class
 class UserRepository {
     // Create a mutable list to store User objects
     private val users: MutableList<User> = mutableListOf()
@@ -69,3 +69,4 @@ fun main() {
     println("\nAll Users:")
     allUsers.forEach { println(it) }
     }
+*/
